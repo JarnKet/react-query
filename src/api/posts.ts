@@ -1,8 +1,8 @@
 import axiosInstance from "../config/axiosConfig";
 import type { Post } from "../interfaces/post";
 
-const getPosts = async (): Promise<Post[]> => {
-	const response = await axiosInstance.get<Post[]>("/posts");
+const getPosts = async (params?: any): Promise<Post[]> => {
+	const response = await axiosInstance.get<Post[]>("/posts", { params });
 	return response.data;
 };
 
